@@ -196,9 +196,9 @@ def tic_tac_toe(board):
         return('NO WINNER')
     else: 
         if X_count == len(x):
-            return('X Wins')
+            return('X')
         elif O_count == len(x):
-            return('O wins')
+            return('O')
 
 
 
@@ -244,7 +244,7 @@ def eta(first_stop, second_stop, route_map):
         for x in legs_list:
             if search_condition == 0:
                 if new_first in x[0]:
-                    time_dummy = str(legs[x])
+                    time_dummy = str(route_map[x])
                     for y in time_dummy:
                         if y.isnumeric() == True:
                             time_add = time_add + y
@@ -265,4 +265,4 @@ def eta(first_stop, second_stop, route_map):
             else:
                 continue
         search_condition = 0
-    return(time_spent)
+    return(int(time_spent))
